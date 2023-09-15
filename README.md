@@ -16,6 +16,29 @@
 
 ![](/img/2.PNG)
 
+# Topología general del proyecto
+
+![](/img/28.PNG)
+
+# Distribución `IPV4` para la topología
+
+| *VPC* | *DIRECCIÓN DE RED* | *GATEWAY* | *VLAN* |
+| - | - | - | - |
+| RRHH_1 | 192.168.91.11/24 | 192.168.91.1 | 10 |
+| RRHH_2 | 192.168.91.12/24 | 192.168.91.1 | 10 |
+| RRHH_3 | 192.168.91.13/24 | 192.168.91.1 | 10 |
+| RRHH_4 | 192.168.91.14/24 | 192.168.91.1 | 10 |
+| Informatica_1 | 192.168.92.11/24 | 192.168.92.1 | 20 |
+| Informatica_2 | 192.168.92.12/24 | 192.168.92.1 | 20 |
+| Informatica_3 | 192.168.92.13/24 | 192.168.92.1 | 20 |
+| Conta_1 | 192.168.93.11/24 | 192.168.93.1 | 30 |
+| Conta_2 | 192.168.93.12/24 | 192.168.93.1 | 30 |
+| Conta_3 | 192.168.93.13/24 | 192.168.93.1 | 30 |
+| Conta_4 | 192.168.93.14/24 | 192.168.93.1 | 30 |
+| Ventas_1 | 192.168.94.11/24 | 192.168.94.1 | 40 |
+| Ventas_2 | 192.168.94.12/24 | 192.168.94.1 | 40 |
+| Ventas_3 | 192.168.94.13/24 | 192.168.94.1 | 40 |
+
 # Topología 1 - Área de trabajo
 1. Creamos la topología del área de trabajo.
 
@@ -216,7 +239,7 @@ save
 
 ## Configuración de `puerto UDP` de la `Nube`.
 
-![](/img/7.jpg)
+![](/img/7.PNG)
 
 # Topología 2 - Backbone
 
@@ -377,7 +400,7 @@ copy running-config startup-config
 
 ## Configurando switch `ESW7`.
 
-![](/img/12.jpg)
+![](/img/12.png)
 
 * Configurando los puertos `f1/0`,`f1/1`, `f1/2` y `f1/3` en `modo trunkal` para las conexiones hacia `ESW4`,`ESW5`,`ESW7` y `Nube`.
 
@@ -416,7 +439,13 @@ save
 
 ## Configuración de `puerto UDP` de la `Nube`.
 
+* Conexión `UDP` hacia `Topología 1`
+
 ![](/img/13.png)
+
+* Conexión `UDP` hacia `Topología 3`
+
+![](/img/27.png)
 
 # Topología 3 - Zona de Servidores
 
@@ -424,7 +453,11 @@ save
 
 ![](/img/14.PNG)
 
-## Configurando el switch `ESW8` con las `VLAN Ventas` y los puertos `f1/0` y `f1/1 ` en modo `trunkal` hacia la `Nube y ESW9`
+## Configurando el switch `ESW8` 
+
+![](/img/24.PNG)
+
+* Se configuran las `VLAN Ventas` y los puertos `f1/0` y `f1/1 ` en modo `trunkal` hacia la `Nube y ESW9`
 
 ```
 enable
@@ -461,9 +494,12 @@ end
 copy running-config startup-config
 ```
 
-![](/img/15.jpg)
+## Configurando el switch `ESW9` 
 
-## Configurando el switch `ESW9` con los puertos `f1/0`, `f1/1` y `f1/2` en modo `trunk`
+![](/img/15.PNG)
+
+* Se asignan los puertos `f1/0`, `f1/1` y `f1/2` en modo `trunk`
+
 
 ```
 enable
@@ -502,7 +538,11 @@ end
 copy running-config startup-config
 ```
 
-## Configurando switch `ESW10` con los puertos `f1/0` y `f1/1` en modo trunk para la conexión hacia `ESW9` y `ESW11`
+## Configurando switch `ESW10` 
+
+![](/img/25.PNG)
+
+* Se configuran los puertos `f1/0` y `f1/1` en modo trunk para la conexión hacia `ESW9` y `ESW11`
 
 ```
 enable
@@ -541,7 +581,11 @@ end
 copy running-config startup-config
 ```
 
-## Configurando switch `ESW11` con los puertos `f1/1` y `f1/2` en modo trunk para la conexión hacia `ESW9` y `ESW10`
+## Configurando switch `ESW11` 
+
+![](img/26.PNG)
+
+* Se colocan los puertos `f1/1` y `f1/2` en modo trunk para la conexión hacia `ESW9` y `ESW10`
 
 ```
 enable
@@ -581,6 +625,9 @@ copy running-config startup-config
 ```
 
 ## Configurando conexión `UDP` de la `Nube`
+
+* Conexión `UDP` hacia `Topología 2`
+  
 ![](/img/23.PNG)
 
 # Test de `conexiones` entre `VPC's` de la misma `vlan`.
