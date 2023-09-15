@@ -25,13 +25,13 @@
 
 ![](/img/4.PNG)
 
-* Configurando puertos `f1/0` y `f1/2` en `modo trunkal` para la comunicación con `ESW2` y `ESW3`.
+* Configurando puertos `f1/0`, `f1/1` y `f1/2` en `modo trunkal` para la comunicación con `ESW2`, `ESW3` y la `Nube`.
 
 ```
  enable
  configure terminal 
  
- interface range f1/0
+ interface range f1/0-2
  switchport mode trunk
  switchport trunk allowed vlan 1,10,20,30,40,1002-1005
  no shutdown
@@ -435,6 +435,8 @@ switchport mode trunk
 switchport trunk allowed vlan 1,10,20,30,40,1002-1005
 no shutdown
 exit
+
+* Configurando acceso a la `VLAN Ventas` en los puertos `f1/2` y `f1/3`
 
 interface range f1/2 - 3
 switchport mode access
