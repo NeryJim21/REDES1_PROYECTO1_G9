@@ -2,10 +2,10 @@
 
 | *Nombre* | *Carnet* | *Ipv4* |
 | - | - | - |
-| César Alejandro Chinchilla González | 201612132 | 10.8.0.3 |
-| Nery Oswaldo Jiménez Contreras | 201700381 | 10.8.0.4 |
-| Miguel Fernando Guirola Villatla | 201700772 | 10.8.0.2 |
-| Herbert Steve González Camey | 201900122 | 10.8.0.5 |
+| César Alejandro Chinchilla González | 201612132 | 10.8.0.2 |
+| Miguel Fernando Guirola Villatla | 201700772 | 10.8.0.3 |
+| Herbert Steve González Camey | 201900122 | 10.8.0.4 |
+| Nery Oswaldo Jiménez Contreras | 201700381 | 10.8.0.6 |
 
 # Conexión a VPN
 1. Se procede a deshabilitar el `firewall` en cada una de las computadoras
