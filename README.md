@@ -239,6 +239,9 @@ save
 
 ## Configuración de `puerto UDP` de la `Nube`.
 
+* Conexión `UDP` hacia `Topología 2`
+
+
 ![](/img/7.PNG)
 
 # Topología 2 - Backbone
